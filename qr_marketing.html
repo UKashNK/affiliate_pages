@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Activities You Shouldn't Miss in Prague</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .appreciation-banner {
+            background-color: #f8f4e5;
+            border-left: 5px solid #f7b731;
+            padding: 15px;
+            margin: 0 auto 30px;
+            max-width: 1000px;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .appreciation-icon {
+            font-size: 2rem;
+            color: #f7b731;
+        }
+
+        .appreciation-text {
+            flex: 1;
+        }
+
+        .appreciation-text h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .appreciation-text p {
+            margin-bottom: 0;
+            color: #7f8c8d;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .download-btn:hover {
+            background-color: #219653;
+        }
+
+        .share-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .share-btn:hover {
+            background-color: #2980b9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .activities-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .activity-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 350px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .exclusive-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .activity-title {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .activity-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .activity-location svg {
+            width: 14px;
+            height: 14px;
+            fill: #7f8c8d;
+        }
+
+        .activity-description {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .price-container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .price-label {
+            font-weight: bold;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #e74c3c;
+        }
+
+        .discounted-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .savings {
+            color:rgb(216, 148, 0);
+            font-weight: bold;
+        }
+
+        .buy-now {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .buy-now:hover {
+            background-color: #2980b9;
+        }
+
+        .discount-code-container {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f8f4e5;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px dashed #f7b731;
+        }
+
+        .discount-code-title {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .discount-code {
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #e74c3c;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .gallery-dot.active {
+            background-color: white;
+        }
+    </style>
+    <!-- Include jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="appreciation-banner">
+        <div class="appreciation-icon">❤️</div>
+        <div class="appreciation-text">
+            <h2>Thank You for Supporting Us!</h2>
+            <p>As a token of our appreciation, here are exclusive discounts for your next Prague adventure. Don't forget to use the discount codes below to claim your special price!</p>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn share-btn" id="sharePage">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+            </svg>
+            Share
+        </button>
+    </div>
+
+    <h1>Exclusive Prague Activities Discounts</h1>
+
+    <div class="activities-container">
+        <!-- Activity 1 -->
+        <div class="activity-card">
+            <div class="exclusive-badge">Discount</div>
+            <div class="gallery">
+                <img src="media\IMG-20250227-WA0004.jpg" alt="Pub Crawl">
+            </div>
+
+            <div class="card-content">
+                <h2 class="activity-title">Golden Pub Crawl</h2>
+                <div class="activity-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                    </svg>
+                    <span>Karlov 12, Prague</span>
+                </div>
+                <p class="activity-description">Join Prague’s ultimate historic pub crawl for an unforgettable night out.
+                  Party in a 150+ year-old venue where history meets high energy, meet travelers and locals, and enjoy exclusive drink discounts all night.
+                  Tickets include entry, access to top afterparty clubs (FU, 80’s Club & EPIC) with no extra fees, and free welcome shots.<br>
+                  Prague’s nightlife at its best. Don’t miss out!</p>
+
+                <div class="price-container">
+                    <div class="price-row">
+                        <span class="price-label">Original Price:</span>
+                        <span class="original-price">CZK 550</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">Your Price:</span>
+                        <span class="discounted-price">CZK 495</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">You Save:</span>
+                        <span class="savings">10%</span>
+                    </div>
+                </div>
+                <a href="https://www.goldenpubcrawlprague.com/tickets" target="_blank" rel="noopener noreferrer">
+                    <button class="buy-now">Book Now with Discount</button>
+                </a>
+
+
+                <div class="discount-code-container">
+                    <div class="discount-code-title">Use this code at checkout:</div>
+                    <div class="discount-code">Wildnights</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity 2 -->
+
+    </div>
+
+    <script>
+
+        // Share functionality
+        document.getElementById('sharePage').addEventListener('click', function() {
+            if (navigator.share) {
+                // Use Web Share API if available
+                navigator.share({
+                    title: 'Exclusive Prague Activities Discounts',
+                    text: 'Check out these exclusive discounts for Prague activities! Don\'t forget to use the discount codes.',
+                    url: window.location.href
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                    fallbackShare();
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                fallbackShare();
+            }
+        });
+
+        function fallbackShare() {
+            // Copy URL to clipboard
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('Link copied to clipboard! You can now share these exclusive discounts with friends.');
+            }).catch(err => {
+                // Final fallback - just show the URL
+                prompt('Copy this link to share these exclusive discounts:', window.location.href);
+            });
+        }
+    </script>
+</body>
+</html>
